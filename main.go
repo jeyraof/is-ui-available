@@ -70,9 +70,7 @@ Sample config.yaml:
 		selection := doc.Find(".comProduct .comProduct__title--wrapper .comProductTile__soldOut")
 		inStock := selection.Index() < 0
 
-		if inStock {
-			inStockProducts = append(inStockProducts, Product{Name: product.Name, Url: product.Url, InStock: inStock})
-		}
+		inStockProducts = append(inStockProducts, Product{Name: product.Name, Url: product.Url, InStock: inStock})
 	}
 
 	jsonString, err := json.Marshal(inStockProducts)
